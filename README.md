@@ -49,6 +49,14 @@ Gtk.main()
 `obsbot_control.py` is the standalone camera library (`Obsbot`, `Webcam`) and
 has no GUI dependencies.
 
+## Hardware support
+
+`obsbot_control.py` is an **independent V4L2/UVC implementation** — it talks to
+cameras over the standard Linux `video4linux2` and UVC (`VIDIOC_*`, `UVCIOC_*`)
+ioctls. It does **not** bundle or depend on any vendor SDK, proprietary driver,
+or OBSBOT firmware. OBSBOT-specific controls (pan/tilt/zoom, AI tracking, HDR,
+FOV, presets) are accessed via the camera's own UVC extension units.
+
 ## License
 
 MIT — see [LICENSE](LICENSE).
